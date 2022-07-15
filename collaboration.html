@@ -1,48 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time to Collaborate</title>
+    <meta name="keywords" content="color, reactiontime, color game"> 
+    <meta name="description" content="Color Changing Game!"> 
+    <meta name="authors" content="Group 7"> 
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
+
 <body>
-    
-
-
-
-
+    <h1>Color Changing Game!</h1>
+    <p>When the box changes colors, be sure to click on it as fast as you can! Reaction time will be placed below: </p> 
+    <div id="timer">
+    </div>
+    <div id="reactionbox"> green box
+    </div>
+    <button type="button" class="btn btn-primary">Primary</button>
+   
 
 
     <script>
-        timer();
+        let beforeClick;
+        let afterClick;
 
-
-
-
-        let insideArea = document.querySelector() 
-
-        document.addEventListener('click', function(event) {
-            let click = insideArea.contains(event.key)
+        let startButton = document.querySelector(".btn")
+        startButton.addEventListener('click', function(event) {
+            timer()
         })
+
+        function gameEnd() {
+            //Display ending message and reaction time
+        }
+
+        
+        let insideArea = document.querySelector("#reactionbox") 
+        insideArea.addEventListener('click', function(event) {
+            afterClick = new Date()
+            // console.log(afterClick + "   " + beforeClick)
+            console.log(afterClick - beforeClick)
+            insideArea.textContent = afterClick - beforeClick + " ms"
+        })
+
 
         function randomTime() {
             let timer = Math.floor(Math.random()*3000) + 1000;
             return timer
         }
 
+
         function timer() {
             setTimeout(function() {
-                // console.log("test")
-                // flash green
-                let beforeClick = new Date() 
+                insideArea.style.backgroundColor = "green"
+                beforeClick = new Date() 
             }, randomTime())
         }
-
-        function reactionTime() {
-            
-        }
-
-        
 
 
 
@@ -50,4 +62,3 @@
     </script>
 
 </body>
-</html>
