@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+
 <body>
     <h1>Color Changing Game!</h1>
     <p>When the box changes colors, be sure to click on it as fast as you can! Reaction time will be placed below: </p> 
     <div id="timer">
     </div>
-    <div id="reactionbox">
+    <div id="reactionbox"> green box
     </div>
+    <button type="button" class="btn btn-primary">Primary</button>
    
 
 
-
-
-
-
     <script>
+        let beforeClick;
+        let afterClick;
 
         function gameStart() {
             //If user click on button, game starts, display turns red, run gamePlay function
@@ -39,10 +39,23 @@
         
         let insideArea = document.querySelector() 
 
-        document.addEventListener('click', function(event) {
-            let click = insideArea.contains(event.key)
+        let startButton = document.querySelector(".btn")
+        startButton.addEventListener('click', function(event) {
+            timer()
         })
 
+        function gameEnd() {
+            //Display ending message and reaction time
+        }
+
+        
+        let insideArea = document.querySelector("#reactionbox") 
+        insideArea.addEventListener('click', function(event) {
+            afterClick = new Date()
+            // console.log(afterClick + "   " + beforeClick)
+            console.log(afterClick - beforeClick)
+            insideArea.textContent = afterClick - beforeClick + " ms"
+        })
 
 
         function randomTime() {
@@ -51,8 +64,16 @@
         }
 
 
+        function timer() {
+            setTimeout(function() {
+                insideArea.style.backgroundColor = "green"
+                beforeClick = new Date() 
+            }, randomTime())
+        }
 
 
     </script>
 
 </body>
+
+</html>
