@@ -14,18 +14,35 @@
 
 
     <script>
+        timer();
+
+
+
+
         let insideArea = document.querySelector() 
 
         document.addEventListener('click', function(event) {
             let click = insideArea.contains(event.key)
         })
 
-
-
         function randomTime() {
             let timer = Math.floor(Math.random()*3000) + 1000;
             return timer
         }
+
+        function timer() {
+            setTimeout(function() {
+                // console.log("test")
+                // flash green
+                let beforeClick = new Date() 
+            }, randomTime())
+        }
+
+        function reactionTime() {
+            
+        }
+
+        
 
 
 
