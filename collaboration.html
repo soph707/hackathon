@@ -6,6 +6,7 @@
     <meta name="authors" content="Group 7"> 
     <meta name="viewport" content="width=device-width, initial scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
 
@@ -24,21 +25,6 @@
         let beforeClick;
         let afterClick;
 
-        function gameStart() {
-            //If user click on button, game starts, display turns red, run gamePlay function
-        }
-
-        function gamePlay() {
-            //Display turns green at random time, register click and time of click (getTime function?)
-        }
-
-        function gameEnd() {
-            //Display ending message and reaction time
-        }
-
-        
-        let insideArea = document.querySelector() 
-
         let startButton = document.querySelector(".btn")
         startButton.addEventListener('click', function(event) {
             timer()
@@ -47,7 +33,6 @@
         function gameEnd() {
             //Display ending message and reaction time
         }
-
         
         let insideArea = document.querySelector("#reactionbox") 
         insideArea.addEventListener('click', function(event) {
@@ -56,7 +41,6 @@
             console.log(afterClick - beforeClick)
             insideArea.textContent = afterClick - beforeClick + " ms"
         })
-
 
         function randomTime() {
             let timer = Math.floor(Math.random()*3000) + 1000;
@@ -70,7 +54,6 @@
                 beforeClick = new Date() 
             }, randomTime())
         }
-
 
     </script>
 
