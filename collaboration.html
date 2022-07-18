@@ -32,6 +32,7 @@
         let startButton = document.querySelector(".btn")
         startButton.addEventListener('click', function(event) {
             insideArea.style.backgroundColor = "blue"
+            insideArea.textContent = "Ready?"
             lock = true;
             timer()
         })
@@ -39,7 +40,6 @@
         let insideArea = document.querySelector("#reactionbox") 
         insideArea.addEventListener('click', function(event) {
             if(lock) {
-                // alert("It's too soon")
                 insideArea.textContent = "You clicked too soon"
             }
             else {
