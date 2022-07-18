@@ -1,0 +1,33 @@
+#reactionbox{
+    border: 2px solid black;
+    padding: 100px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+ }
+ #PrimaryButton{
+    padding: 30px;
+    width: 100%;
+    color: white;
+    background-color: green;
+ }
+ #instructions{
+    margin: 0px auto;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    padding: 30px;
+ }
+ #title{
+    text-align: center;
+    color: white;
+    background-color: black;
+    font-size: 50px;
+    margin: 0px auto;
+ }
+ html{
+    background-color: black;
+ }
+ 
+ 
